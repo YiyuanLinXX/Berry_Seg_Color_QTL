@@ -1,0 +1,28 @@
+study:
+  site: "University of Minnesota Horticultural Research Center"
+  acquisition_date: "2025-08-11"
+  right_camera_id: "016F4E5D"
+
+camera_mapping:
+  forward_offset_cm: -50
+  left_offset_cm: 57
+  horizontal_fov_deg: 60.5
+  max_distance_m: 1.5
+  neighbor_threshold_m: 2.0
+  edge_extension_m: 1.0
+  row_end_margin_m: 2.0
+  parallel_angle_threshold_deg: 45.0
+
+phenotyping:
+  depth_keep_percentiles: [20, 40, 60, 80, 100]
+  minimum_component_area_px: 200
+  color_spaces: [RGB, HSV, Lab]
+
+qtl:
+  cross_type: "4way"
+  method: "Haley-Knott"
+  map_function: "kosambi"
+  genotype_probability_step_cm: 10
+  error_probability: 0.0001
+  permutations: 1000
+  seed: 20260501

@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the ASABE paper and the relevant upstream models."
+title: "Grape Berry Color Phenotyping and QTL Mapping"
+type: software
+version: 0.1.0
+date-released: 2026-09-04
+authors:
+  - family-names: Lin
+    given-names: Yiyuan
+preferred-citation:
+  type: conference-paper
+  title: "Robot-Enabled Field Phenotyping of Grape Berry Cluster Color Using Multimodal Vision Foundation Models for Genetic Mapping"
+  authors:
+    - family-names: Lin
+      given-names: Yiyuan
+    - family-names: Pandey
+      given-names: Madan
+    - family-names: Cadle-Davidson
+      given-names: Lance
+    - family-names: Clark
+      given-names: Matthew
+    - family-names: Teh
+      given-names: Soon Li
+    - family-names: Jiang
+      given-names: Yu
+  year: 2026
+  conference:
+    name: "2026 ASABE Annual International Meeting"
+  identifiers:
+    - type: doi
+      value: "10.13031/aim.202600399"

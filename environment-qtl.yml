@@ -1,0 +1,10 @@
+name: berry-color-qtl-r
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.4
+  - r-qtl
+  - r-ggplot2
+  - r-ggrepel
+  - r-scales
+  - r-stringr

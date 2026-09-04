@@ -1,0 +1,16 @@
+name: berry-color-qtl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=1.26
+  - pandas=2.1
+  - scipy=1.11
+  - matplotlib=3.8
+  - opencv=4.9
+  - imageio=2.31
+  - tqdm=4.67
+  - scikit-learn=1.4
+  - umap-learn=0.5
+  - pyyaml=6.0
+  - pytest=8

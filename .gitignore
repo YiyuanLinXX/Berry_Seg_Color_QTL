@@ -1,0 +1,34 @@
+# External model checkouts and weights
+external/
+checkpoints/
+weights/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+
+# Large/raw/derived data
+data/raw/
+data/interim/
+results/generated/
+masked_crops/
+*.npy
+*.npz
+*.joblib
+*.pkl
+*.ply
+
+# Python, R, editors, and OS
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.Rhistory
+.RData
+R_libs/
+.venv/
+.vscode/
+.idea/
+.DS_Store
