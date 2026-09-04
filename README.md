@@ -1,6 +1,6 @@
 # Robot-Enabled Grape Berry Color Phenotyping and QTL Mapping
 
-[Yiyuan Lin](https://yiyuanlinxx.github.io/), Madan Pandey, [Lance Cadle-Davidson](https://cals.cornell.edu/people/lance-cadle-davidson), Matthew Clark, Soon Li Teh, [Yu Jiang](https://cals.cornell.edu/people/yu-jiang)
+[Yiyuan Lin](https://yiyuanlinxx.github.io/), [Madan Pandey](https://www.linkedin.com/in/madan-pandey-975864196/), [Lance Cadle-Davidson](https://cals.cornell.edu/people/lance-cadle-davidson), [Matthew Clark](https://horticulture.umn.edu/people/matthew-clark), [Soon Li Teh](https://horticulture.umn.edu/people/soon-li-teh), [Yu Jiang](https://cals.cornell.edu/people/yu-jiang)
 
 [[**`Paper`**](https://doi.org/10.13031/aim.202600399)] [[**`Project Page`**](https://yiyuanlinxx.github.io/publications/berry-color-asabe)] [[**`BibTeX`**](#citation)]
 
@@ -10,28 +10,13 @@ This is the official implementation of the workflow presented in our paper [Robo
 
 High-resolution stereo images were collected in a University of Minnesota research vineyard using a mobile imaging platform equipped with active strobe illumination and synchronized RTK-GPS. Grape berry clusters were segmented using [SAM-CLIP](https://github.com/YiyuanLinXX/SAM-CLIP), filtered using depth estimated by [FoundationStereo](https://github.com/NVlabs/FoundationStereo), assigned to individual vines through spatial mapping, and summarized in RGB, HSV, and CIE Lab color spaces for genetic analysis.
 
+This compact repository contains the project-specific processing, spatial mapping, phenotype aggregation, and QTL analysis modules. SAM-CLIP and FoundationStereo are maintained as pinned external dependencies so that their upstream source trees and model weights are not duplicated here.
+
 <p align="center">
-  <img src="results/paper/depth_filter/final_depth_filter_multi_panel.png" width="88%" />
+  <img src="results/paper/workflow/Figure_1.png" width="88%" />
 </p>
 
-<p align="center"><em>Depth-filter sensitivity analysis for vine-level berry color phenotyping.</em></p>
-
-## Workflow
-
-```text
-Stereo RGB images ──┬── SAM-CLIP ────────────────> berry cluster masks
-                    └── FoundationStereo ─────────> metric depth
-                                                          │
-Berry masks + depth ──> depth filtering ──> berry instances ──> RGB/HSV/Lab features
-                                                                          │
-RTK-GPS + vine survey ──> frame-to-vine mapping ──> instance assignment ───┤
-                                                                          │
-                                                               vine-level phenotypes
-                                                                          │
-Genotype map ───────────────────────────────────────────────────────> QTL analysis
-```
-
-This compact repository contains the project-specific processing, spatial mapping, phenotype aggregation, and QTL analysis modules. SAM-CLIP and FoundationStereo are maintained as pinned external dependencies so that their upstream source trees and model weights are not duplicated here.
+<p align="center"><em>Overview of the proposed field phenotyping pipeline.</em></p>
 
 ## Repository Structure
 
@@ -174,10 +159,10 @@ N_PERM=1000 Rscript scripts/qtl/run_binary_qtl.R
 Continuous traits are analyzed using a four-way cross and Haley-Knott regression. The image-derived phenotypes recover a major QTL on chromosome 2 that is consistent with the categorical berry color analysis.
 
 <p align="center">
-  <img src="results/paper/qtl/depth_60/lab_b_mean/lod_plot.png" width="88%" />
+  <img src="results/paper/qtl/Figure_6.png" width="88%" />
 </p>
 
-<p align="center"><em>Genome-wide QTL scan for the vine-level mean CIE b* phenotype at the 60% depth-retention threshold.</em></p>
+<p align="center"><em>Comparison of Genome-wide QTL scan results derived from image-based continuous phenotypes at the 60% depth-retention threshold and manually assigned categorical berry color traits.</em></p>
 
 ## Verification
 
